@@ -9,7 +9,7 @@ function Loading(props) {
         background: backgroundColor,
       }}
     >
-      Loading...
+      <div className="loader"></div>
     </div>
   );
 }

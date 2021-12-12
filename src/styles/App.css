@@ -289,6 +289,46 @@ textarea {
   display: grid;
   place-items: center;
   border-radius: 0px 0 0px 30px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.loader {
+  width: 100px;
+  height: 30px;
+  /* border: solid rgb(255, 255, 255); */
+  border-top: 4px solid rgb(24, 129, 59);
+  /* border-radius: 50%; */
+  animation: spin 1.5s linear infinite;
+  height: 100%;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    left: 0;
+    width: 10px;
+  }
+
+  25% {
+    left: 25%;
+    width: 25px;
+  }
+
+  50% {
+    left: 50%;
+    width: 50px;
+  }
+
+  75% {
+    left: 75%;
+    width: 75px;
+  }
+
+  100% {
+    left: 100%;
+    width: 100px;
+  }
 }
 
 @media screen and (max-width: 900px) {
