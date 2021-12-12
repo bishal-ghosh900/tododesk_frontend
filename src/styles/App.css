@@ -1,0 +1,385 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: azure;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(24, 129, 59);
+  border-radius: 30px;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1008%26quot%3b)' fill='none'%3e%3cpath d='M690.775%2c122.839C711.378%2c122.75%2c733.391%2c119.06%2c744.412%2c101.653C756.077%2c83.229%2c754.136%2c59.278%2c742.821%2c40.637C731.922%2c22.681%2c711.731%2c11.859%2c690.775%2c13.289C671.847%2c14.581%2c659.649%2c30.816%2c649.735%2c46.991C639.142%2c64.273%2c626.683%2c84.292%2c636.329%2c102.12C646.234%2c120.425%2c669.962%2c122.929%2c690.775%2c122.839' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M140.5737892847945 256.0032299782568L160.09201977303297 340.54597444677916 244.63476424155536 321.02774395854067 225.11653375331684 236.4849994900183z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M501.14020534983473 297.61858474644845L528.6076585700924 417.1126430615247 608.2584446890507 345.3947531085124z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M426.6585102785149 422.0275731934929L316.44471362727404 528.4597994484657 422.87693988224686 638.6735960997065 533.0907365334876 532.2413698447338z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M149.17144932485374 414.63106837394173L315.4442230137854 435.0467978814453 335.85995252128896 268.7740241925136 169.58717883235727 248.35829468501004z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1108.5393389933645 279.9676960503552L1196.8703004871636 303.6359058492833 1188.207134438656 159.30535870912053z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M680.459%2c289.785C720.498%2c288.16%2c747.65%2c252.779%2c765.881%2c217.095C782.202%2c185.15%2c784.947%2c148.8%2c768.873%2c116.73C750.814%2c80.697%2c720.763%2c46.989%2c680.459%2c46.658C639.756%2c46.324%2c609.188%2c79.635%2c589.495%2c115.258C570.56%2c149.51%2c564.027%2c189.849%2c582.116%2c224.555C601.603%2c261.942%2c638.333%2c291.495%2c680.459%2c289.785' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M779.123%2c37.912C796.423%2c38.83%2c812.66%2c28.026%2c820.455%2c12.555C827.61%2c-1.646%2c821.738%2c-17.555%2c814.093%2c-31.499C806.028%2c-46.207%2c795.879%2c-62.051%2c779.123%2c-62.827C761.422%2c-63.647%2c745.739%2c-50.987%2c738.05%2c-35.022C731.218%2c-20.837%2c737.024%2c-5.182%2c744.75%2c8.537C752.677%2c22.612%2c762.992%2c37.056%2c779.123%2c37.912' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1003.9101425540766 388.6321783389661L1066.7897437202994 475.1785245505932 1153.3360899319264 412.2989233843704 1090.4564887657036 325.7525771727434z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1496.192584851185 42.75349440909628L1344.503602565168 53.3606213473131 1355.1107295033848 205.04960363333024 1506.799711789402 194.4424766951134z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M455.92758396471845 296.95210225416804L558.7115412654732 407.38521888893155 599.4644126700193 281.96077747454007z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1355.192%2c559.913C1385.191%2c559.962%2c1404.83%2c532.31%2c1419.853%2c506.344C1434.908%2c480.321%2c1447.035%2c450.588%2c1434.16%2c423.42C1419.565%2c392.621%2c1389.263%2c369.016%2c1355.192%2c369.898C1322.246%2c370.751%2c1297.072%2c397.53%2c1283.006%2c427.335C1270.931%2c452.921%2c1277.37%2c481.284%2c1290.899%2c506.132C1305.22%2c532.433%2c1325.245%2c559.864%2c1355.192%2c559.913' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M94.649%2c280.746C123.647%2c281.669%2c153.284%2c272.628%2c169.096%2c248.302C186.304%2c221.827%2c189.044%2c187.281%2c173.124%2c160.012C157.321%2c132.942%2c125.869%2c117.991%2c94.649%2c120.782C67.227%2c123.233%2c50.335%2c147.956%2c37.218%2c172.162C24.921%2c194.854%2c15.914%2c220.996%2c27.981%2c243.811C40.712%2c267.881%2c67.434%2c279.88%2c94.649%2c280.746' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M257.35141706426344 259.7073020047772L176.04205248681285 281.49408058039285 197.82883106242846 362.8034451578434 279.1381956398791 341.0166665822278z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M138.50510907951886 231.63567062050578L164.9332982006835 323.80171908621435 257.0993466663921 297.37352996504967 230.6711575452274 205.20748149934113z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M903.1580411366444 226.5249147928393L747.2820715196052 231.81949422586663 817.5016900747182 348.6845646456209z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M141.22752869508875 248.62584097769263L95.07953867897169 177.56416800140875 24.0178657026878 223.7121580175258 70.16585571880486 294.7738309938097z' fill='rgba(58%2c 255%2c 0%2c 1)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1008'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: blur(8px);
+}
+
+.main {
+  font-family: "Courier New", Courier, monospace;
+  width: 50%;
+  padding: 50px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  row-gap: 30px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(202, 251, 255, 0.7),
+    rgba(142, 255, 97, 0.7)
+  );
+}
+
+.btn,
+.btn:visited {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 30px;
+  outline: none;
+  border: solid;
+  text-decoration: none;
+  color: darkblue;
+}
+
+.btn:active {
+  color: darkblue;
+}
+
+.login-register {
+  width: 50%;
+  padding: 50px;
+  border-radius: 50px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(202, 251, 255, 0.7),
+    rgba(142, 255, 97, 0.7)
+  );
+}
+
+.heading {
+  color: darkblue;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+}
+
+input {
+  font-size: 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  margin: 20px;
+  padding: 10px;
+  outline: none;
+  background-color: rgba(205, 255, 222, 0);
+  color: darkblue;
+  border-bottom: 3px darkblue solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: 0.5s;
+}
+
+#submit {
+  cursor: pointer;
+  color: darkblue;
+  font-size: 1.2rem;
+  background-color: rgb(202, 251, 255, 0);
+  border: solid;
+  border-radius: 20px;
+}
+
+.profile-main {
+  width: 90vw;
+  height: 90vh;
+  display: grid;
+  grid-template-rows: 7% 93%;
+  border-radius: 0px 0 0px 30px;
+}
+
+.profile-info {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(105, 255, 155);
+}
+.profile-todo {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(202, 251, 255, 0.7),
+    rgba(142, 255, 97, 0.7)
+  );
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(186px, auto));
+  column-gap: 30px;
+  row-gap: 20px;
+  border-radius: 0px 0 0px 30px;
+}
+
+.username {
+  border: solid;
+  width: 40%;
+}
+
+.todo-div {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.todo {
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+  border-radius: 30px 0px 30px 30px;
+  padding: 15px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: pointer;
+  background-color: rgba(202, 251, 255);
+  box-shadow: 2px 0px 8px 4px grey;
+}
+
+.editor-div {
+  width: 90vw;
+  height: 90vh;
+  border-radius: 0px 0 0px 30px;
+  display: grid;
+  grid-template-rows: 7% 93%;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0 0px 30px;
+  padding: 11px;
+  font-size: 1rem;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(202, 251, 255, 0.7),
+    rgba(142, 255, 97, 0.7)
+  );
+  border: none;
+  outline: none;
+}
+
+.editor-backbtn-div {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: darkblue;
+  background-color: rgb(105, 255, 155);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.username-div {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.backbtn {
+  color: darkblue;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  transition: 0.5s;
+  background-color: rgba(0, 255, 0, 0);
+}
+
+.tickbtn {
+  color: darkblue;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  transition: 0.5s;
+  background-color: rgba(0, 255, 0, 0);
+}
+
+.addbtn {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: darkblue;
+  outline: none;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.5s;
+  background-color: rgba(0, 255, 0, 0);
+}
+
+.signoutbtn {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: darkblue;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.5s;
+  background-color: rgba(0, 255, 0, 0);
+}
+
+.deletebtn {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: 900;
+  color: darkblue;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  background-color: rgba(0, 255, 0, 0);
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border-radius: 0px 0 0px 30px;
+}
+
+@media screen and (max-width: 900px) {
+  .editor-backbtn-div {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    font-weight: 900;
+    color: darkblue;
+    background-color: rgb(105, 255, 155);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .editor-backbtn-div {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: darkblue;
+    background-color: rgb(105, 255, 155);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .login-register {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .heading {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .editor-div {
+    width: 90vw;
+    height: 90vh;
+    border-radius: 0px 0 0px 30px;
+    display: grid;
+    grid-template-rows: 20% 80%;
+  }
+
+  .editor-backbtn-div {
+    position: relative;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .profile-main {
+    grid-template-rows: 20% 80%;
+  }
+
+  .profile-info {
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    font-size: 1rem;
+    position: relative;
+  }
+
+  .signoutbtn {
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .addbtn {
+    font-size: 2rem;
+  }
+
+  .btngrp {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .profile-todo {
+    grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+    column-gap: 30px;
+  }
+
+  .todo-div {
+    width: 120px;
+    height: 120px;
+  }
+}
