@@ -108,14 +108,14 @@ function TextEditor() {
                   !!location.state.date ? handleUpdate() : handleAdd()
                 }
               >
-                <i className="fa fa-check"></i>
+                &#10004;
               </button>
               {!!location.state.date && (
                 <button
                   className="backbtn"
                   onClick={() => navigate("/me", { replace: true })}
                 >
-                  <i className="fas fa-arrow-left"></i>
+                  &#x1F824;
                 </button>
               )}
             </div>

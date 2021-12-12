@@ -222,12 +222,13 @@ textarea {
 
 .backbtn {
   color: darkblue;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
   border: none;
-  padding: 10px;
+  padding: 5px;
   transition: 0.5s;
   background-color: rgba(0, 255, 0, 0);
+  font-weight: 900;
 }
 
 .tickbtn {
@@ -235,7 +236,7 @@ textarea {
   font-size: 14px;
   cursor: pointer;
   border: none;
-  padding: 10px;
+  padding: 5px;
   transition: 0.5s;
   background-color: rgba(0, 255, 0, 0);
 }
@@ -302,7 +303,7 @@ textarea {
 }
 
 .loader {
-  width: 100px;
+  width: 300px;
   height: 30px;
   border-top: 4px solid rgb(24, 129, 59);
   /* border-radius: 50%; */
@@ -320,22 +321,22 @@ textarea {
 
   25% {
     left: 25%;
-    width: 45px;
+    width: 150px;
   }
 
   50% {
     left: 50%;
-    width: 65px;
+    width: 250px;
   }
 
   75% {
     left: 75%;
-    width: 85px;
+    width: 150px;
   }
 
   100% {
     left: 100%;
-    width: 100px;
+    width: 125px;
   }
 }
 
