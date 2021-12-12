@@ -293,36 +293,44 @@ textarea {
   overflow-x: hidden;
 }
 
+.loading::after {
+  width: 100%;
+  border: solid rgb(164, 255, 225);
+  content: "";
+  position: absolute;
+  top: 0;
+}
+
 .loader {
   width: 100px;
   height: 30px;
-  /* border: solid rgb(255, 255, 255); */
   border-top: 4px solid rgb(24, 129, 59);
   /* border-radius: 50%; */
   animation: spin 1.5s linear infinite;
   height: 100%;
   position: absolute;
+  z-index: 2;
 }
 
 @keyframes spin {
   0% {
     left: 0;
-    width: 10px;
+    width: 75px;
   }
 
   25% {
     left: 25%;
-    width: 25px;
+    width: 45px;
   }
 
   50% {
     left: 50%;
-    width: 50px;
+    width: 65px;
   }
 
   75% {
     left: 75%;
-    width: 75px;
+    width: 85px;
   }
 
   100% {
