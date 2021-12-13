@@ -115,7 +115,7 @@ function TextEditor() {
                   className="backbtn"
                   onClick={() => navigate("/me", { replace: true })}
                 >
-                  &#x1F824;
+                  &#129060;
                 </button>
               )}
             </div>
