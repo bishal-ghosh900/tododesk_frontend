@@ -1,11 +1,18 @@
 import "../styles/App.css";
+import React from "react";
 import RegisterOrLogin from "./RegisterOrLogin";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import ProfileMain from "./ProfileMain";
 import TextEditor from "./TextEditor";
-import { ToastContainer } from "react-toastify";
+import { Suspense } from "react";
+
+const ToastContainer = React.lazy(() =>
+  import("react-toastify").then((mod) => ({
+    default: mod.ToastContainer,
+  }))
+);
 
 function App() {
   return (
@@ -19,10 +26,12 @@ function App() {
         <Route path="/me/writeTodo" element={<TextEditor />} />
         <Route path="/*" element={<Navigate to="" replace={true} />} />
       </Routes>
-      <ToastContainer
-        position="bottom-right"
-        //  toastStyle={{ backgroundColor: "crimson" }}
-      />
+      <Suspense fallback={<div>Loading</div>}>
+        <ToastContainer
+          position="bottom-right"
+          //  toastStyle={{ backgroundColor: "crimson" }}
+        />
+      </Suspense>
     </div>
   );
 }
