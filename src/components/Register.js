@@ -9,11 +9,19 @@ function Register() {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_URL}/users`, {
-        username: e.target[0].value,
-        email: e.target[1].value,
-        password: e.target[2].value,
-      });
+      const response = await toast.promise(
+        axios.post(`${process.env.REACT_APP_URL}/users`, {
+          username: e.target[0].value,
+          email: e.target[1].value,
+          password: e.target[2].value,
+        }),
+        {
+          pending: "Wait for few seconds.",
+          success: "User is created",
+          error: "Something wrong happened",
+        }
+      );
+
       localStorage.setItem("token", response.headers["x-auth-token"]);
       navigate("/me", {
         replace: true,
