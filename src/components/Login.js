@@ -11,13 +11,18 @@ function Login() {
   let handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_URL}/users/auth`,
-        {
+      const response = await toast.promise(
+        axios.post(`${process.env.REACT_APP_URL}/users/auth`, {
           email: e.target[0].value,
           password: e.target[1].value,
+        }),
+        {
+          pending: "Wait for few seconds.",
+          success: "User Logged in",
+          error: "Something wrong happened.",
         }
       );
+
       localStorage.setItem("token", response.headers["x-auth-token"]);
       navigate("/me", {
         replace: true,

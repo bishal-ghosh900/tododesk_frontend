@@ -17,8 +17,8 @@ function Register() {
         }),
         {
           pending: "Wait for few seconds.",
-          success: "User is created",
-          error: "Something wrong happened",
+          success: "User is created.",
+          error: "Something wrong happened.",
         }
       );
 
